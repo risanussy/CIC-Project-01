@@ -14,12 +14,6 @@ class Auth extends CI_Controller {
 
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        // $this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'trim|required|matches[password]');
-    
-        // if ($this->form_validation->run() == FALSE) {
-        //     $this->load->view('auth/index');
-        // } else {
-        //     $this->load->view('auth/login');
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login Page';
             $this->load->view('templates/auth_header', $data);
@@ -71,8 +65,49 @@ class Auth extends CI_Controller {
     }
 
     public function registration() {
-        $data['title'] = 'Registration Page';
-        $this->load->view('auth/registration', $data);
+        //agar user tak bisa kembali ke hal auth saat berada di hal regis
+        if ($this->session->userdata('email')) {
+            redirect('user'); 
+        }
+
+        //memberikan rules
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|email_valid|valid_email|is_unique[user.email]', [
+            'is_unique' => 'This email has already been registered'
+        ]);
+        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|integer');
+
+    
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Registration';
+            $this->load->view('auth/registration', $data);
+            $this->load->view('templates/auth_footer');
+        } else {
+            $data = [
+                'name' => htmlspecialchars($this->input->post('name', true)),//crose side scripting
+                'email' => htmlspecialchars($this->input->post('email', true)),
+                'image' => 'default.jpg',
+                'role_id' => 2,
+                'is_active' => 1,
+                'no_hp' => htmlspecialchars($this->input->post('no_hp', true)),
+                'date_create' => time()
+            ];
+
+            $this->db->insert('user', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Congratulation! your account has been created. Please Login</div>');
+            redirect('auth');
+        }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+        
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        You have been logged out!</div>');
+        redirect('auth');
     }
 
 }
