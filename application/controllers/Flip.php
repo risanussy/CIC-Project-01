@@ -1,9 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Agen extends CI_Controller 
-{
-
+class Flip extends CI_Controller {
     public function index()
     {
         $data['title'] = 'Angga Web';
@@ -11,40 +9,29 @@ class Agen extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('agen/tambah', $data);
+        $this->load->view('flip/transaksi', $data);
         $this->load->view('templates/footer');
     }
 
-    public function list()
+    public function inquery()
     {
         $data['title'] = 'Angga Web';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('agen/list', $data);
+        $this->load->view('flip/inquery', $data);
         $this->load->view('templates/footer');
     }
 
-    public function jaringan()
+    public function history()
     {
         $data['title'] = 'Angga Web';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('agen/jaringan', $data);
-        $this->load->view('templates/footer');
-    }
-
-    public function pohon()
-    {
-        $data['title'] = 'Angga Web';
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('agen/pohon', $data);
+        $this->load->view('flip/history', $data);
         $this->load->view('templates/footer');
     }
 }

@@ -26,10 +26,10 @@ class Auth extends CI_Controller {
 
     private function _login()
     {
-        $email = $this->input->post('email');
+        $email = $this->input->post('username');
         $password = $this->input->post('password');
     
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+        $user = $this->db->get_where('user', ['username' => $username])->row_array();
     
         if ($user) {
             if ($user['is_active'] == 1) {

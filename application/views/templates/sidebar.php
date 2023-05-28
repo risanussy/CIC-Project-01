@@ -22,25 +22,20 @@
         <span class="text-light">Agent</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white text-light py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('agen'); ?>">Add Agent</a>
-            <a class="collapse-item" href="<?= base_url('agen/list'); ?>">List Agent</a>
-            <a class="collapse-item" href="cards.html">Network Generation</a>
-            <a class="collapse-item" href="cards.html">Tree Agent</a>
+        <div class="bg-dark py-2 collapse-inner rounded">
+            <a class="collapse-item text-light" href="<?= base_url('agen'); ?>">Add Agent</a>
+            <a class="collapse-item text-light" href="<?= base_url('agen/list'); ?>">List Agent</a>
+            <a class="collapse-item text-light" href="<?= base_url('agen/jaringan'); ?>">Network Generation</a>
+            <a class="collapse-item text-light" href="<?= base_url('agen/pohon'); ?>">Tree Agent</a>
         </div>
     </div>
 </li>
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-        aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-box text-success"></i>
-        <span class="text-light">Product</span>
-    </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
+        <div class="bg-dark py-2 collapse-inner rounded">
             <a class="collapse-item" href="utilities-color.html">Master Product</a>
             <a class="collapse-item" href="utilities-border.html">Category Product</a>
         </div>
@@ -56,11 +51,11 @@
     </a>
     <div id="komisi" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Komisi</a>
-            <a class="collapse-item" href="utilities-border.html">Statment Komisi</a>
-            <a class="collapse-item" href="utilities-border.html">Wallet</a>
-            <a class="collapse-item" href="utilities-border.html">Withdraw</a>
+        <div class="bg-dark py-2 collapse-inner rounded">
+            <a class="collapse-item text-light" href="utilities-color.html">Komisi</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Statment Komisi</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Wallet</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Withdraw</a>
         </div>
     </div>
 </li>
@@ -74,10 +69,10 @@
     </a>
     <div id="flip" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Transaction</a>
-            <a class="collapse-item" href="utilities-border.html">Inquery</a>
-            <a class="collapse-item" href="utilities-border.html">History Payment</a>
+        <div class="bg-dark py-2 collapse-inner rounded">
+            <a class="collapse-item text-light" href="<?= base_url('flip'); ?>">Transaction</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/inquery'); ?>">Inquery</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/history'); ?>">History Payment</a>
         </div>
     </div>
 </li>
@@ -91,17 +86,14 @@
     </a>
     <div id="laporan" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Registration</a>
-            <a class="collapse-item" href="utilities-border.html">Orderan Agent</a>
-            <a class="collapse-item" href="utilities-border.html">Orderan Customer</a>
-            <a class="collapse-item" href="utilities-border.html">Total Omset</a>
-            <a class="collapse-item" href="utilities-border.html">Personal Omset</a>
-            <a class="collapse-item" href="utilities-border.html">Iuran BPJS TK</a>
-            <a class="collapse-item" href="utilities-border.html">Poin Member</a>
-            <a class="collapse-item" href="utilities-border.html">Reward</a>
-            <a class="collapse-item" href="utilities-border.html">Budgeting</a>
-            <a class="collapse-item" href="utilities-border.html">Bonus Owner</a>
+        <div class="bg-dark py-2 collapse-inner rounded">
+            <a class="collapse-item text-light" href="<?= base_url('laporan'); ?>">Registration</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Total Omset</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Personal Omset</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Poin Member</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Reward</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Budgeting</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Bonus Owner</a>
         </div>
     </div>
 </li>
@@ -123,10 +115,10 @@
     </a>
     <div id="settings" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Umum</a>
-            <a class="collapse-item" href="utilities-border.html">Notifikasi</a>
-            <a class="collapse-item" href="utilities-border.html">Withdraw</a>
+        <div class="bg-dark py-2 collapse-inner rounded">
+            <a class="collapse-item text-light" href="utilities-color.html">Umum</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Notifikasi</a>
+            <a class="collapse-item text-light" href="utilities-border.html">Withdraw</a>
         </div>
     </div>
 </li>
@@ -148,7 +140,7 @@
 }
 
 #sidebarToggle.active {
-  background-color: #28a745;
+  background-color: salmon;
   transition: background-color 0.3s;
 }
 </style>

@@ -1,16 +1,14 @@
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="bg-white mt-5" style="bottom:20px;width:100%;text-align:center;">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright © Angga Website <?= date('Y'); ?></span>    
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
-
+            <!-- End of Footer -->        
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
 
@@ -77,6 +75,19 @@
         });
     </script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#list_table').DataTable({
+                "paging": true, // Mengaktifkan pagination
+                "searching": true, // Mengaktifkan fitur pencarian
+            });
+        });
+    </script>
+
+
+    
 
 
 </body>

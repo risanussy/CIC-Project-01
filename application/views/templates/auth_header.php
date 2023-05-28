@@ -23,7 +23,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
+<body class="<div class="col-lg-6 d-none d-lg-block bg-image" style="background-image: url('<?= base_url('assets/img/log/bg.jpg'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat; display: flex; justify-content: center; align-items: center;">">
 
-<body class="<div class="col-lg-6 d-none d-lg-block" style="background-image: url('<?= base_url('assets/img/log/bg.jpg'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat; display: flex; justify-content: center; align-items: center;">">
+
