@@ -7,6 +7,17 @@
 </a>
 <br>
 
+<!-- QUERY MENU -->
+<?php
+$role_id = $this->session->userdata('role_id'); 
+$queryMenu = "SELECT `user_menu`.`id`, `menu` 
+    FROM `user_menu` 
+    JOIN `user_access_menu` ON `user_menu`.`id` = `user_access_menu`.`menu_id`
+    WHERE `user_access_menu`.`role_id` = $role_id 
+    ORDER BY `user_access_menu`.`menu_id` ASC";
+$menu = $this->db->query($queryMenu)->result_array();  
+?>
+
 <!-- Nav Item - Dashboard -->
 <li class="nav-item">
     <a class="nav-link" href="index.html">
@@ -52,10 +63,10 @@
     <div id="komisi" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-dark py-2 collapse-inner rounded">
-            <a class="collapse-item text-light" href="utilities-color.html">Komisi</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Statment Komisi</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Wallet</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Withdraw</a>
+            <a class="collapse-item text-light" href="komisi/komisi">Komisi</a>
+            <a class="collapse-item text-light" href="komisi/statement">Statment Komisi</a>
+            <a class="collapse-item text-light" href="komisi/wallet">Wallet</a>
+            <a class="collapse-item text-light" href="komisi/withdraw">Withdraw</a>
         </div>
     </div>
 </li>
@@ -87,20 +98,19 @@
     <div id="laporan" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-dark py-2 collapse-inner rounded">
-            <a class="collapse-item text-light" href="<?= base_url('laporan'); ?>">Registration</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Total Omset</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Personal Omset</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Poin Member</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Reward</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Budgeting</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Bonus Owner</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/regis'); ?>">Registration</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/omset'); ?>">Total Omset</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/personal'); ?>">Personal Omsite</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/point_member'); ?>">Point Member</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/reward'); ?>">Reward</a>
+            <a class="collapse-item text-light" href="<?= base_url('flip/bonus'); ?>">Bonus Owner</a>
         </div>
     </div>
 </li>
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="<?= base_url('staff'); ?>">
         <i class="fas fa-users text-success"></i>
         <span class="text-light">Staff</span>
     </a>
@@ -116,15 +126,21 @@
     <div id="settings" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-dark py-2 collapse-inner rounded">
-            <a class="collapse-item text-light" href="utilities-color.html">Umum</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Notifikasi</a>
-            <a class="collapse-item text-light" href="utilities-border.html">Withdraw</a>
+            <a class="collapse-item text-light" href="settings">Umum</a>
+            <a class="collapse-item text-light" href="settings/notifikasi">Notifikasi</a>
+            <a class="collapse-item text-light" href="settings/withdraw2">Withdraw</a>
         </div>
     </div>
 </li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
+
+<li class="nav-item">
+    <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
+    <i class="fas fa-sign-out-alt fa-fw-fa-right-from-bracket text-success"></i>
+    <span>Logout</span></a>
+</li>
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">

@@ -8,12 +8,13 @@ class Auth extends CI_Controller {
     }
 
     public function index() {
-        if ($this->session->userdata('email')) {
-            redirect('user'); 
+        if ($this->session->userdata('username')) {
+            redirect('staff'); 
         }
-
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+    
+        $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login Page';
             $this->load->view('templates/auth_header', $data);
@@ -25,54 +26,55 @@ class Auth extends CI_Controller {
     }
 
     private function _login()
-    {
-        $email = $this->input->post('username');
-        $password = $this->input->post('password');
-    
-        $user = $this->db->get_where('user', ['username' => $username])->row_array();
-    
-        if ($user) {
-            if ($user['is_active'] == 1) {
-                if (password_verify($password, $user['password'])) {
-                    // login success
-                    $data = [
-                        'user' => $user['user'],
-                        'role_id' => $user['role_id']
-                    ];
-                    $this->session->set_userdata($data);
-                    if($user['role_id'] == 1) {
-                        redirect('admin');
-                    }
-                    redirect('user');
+{
+    $username = $this->input->post('username'); 
+    $password = $this->input->post('password');
+
+    $user = $this->db->get_where('staff', ['username' => $username])->row_array();
+    if (!$user) {
+        $user = $this->db->get_where('agen', ['username' => $username])->row_array();
+    }
+
+    if ($user) {
+        if ($user['is_active'] == 1) {
+            if (password_verify($password, $user['password'])) {
+                // login success
+                $data = [
+                    'username' => $user['username'],
+                    'role_id' => $user['role_id']
+                ];
+                $this->session->set_userdata($data);
+                
+                if ($user['role_id'] == 1) {
+                    redirect('staff');
                 } else {
-                    // login failed: incorrect password
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                    Incorrect password!</div>');
-                    redirect('auth');
+                    redirect('agen/list');
                 }
             } else {
-                // login failed: inactive account
+                // login failed: incorrect password
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                This email has not been activated!</div>');
+                Incorrect password!</div>');
                 redirect('auth');
             }
         } else {
-            // login failed: email not registered
+            // login failed: inactive account
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-            Email is not registered</div>');
+            This account is inactive!</div>');
             redirect('auth');
         }
+    } else {
+        // login failed: username not registered
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+        Username is not registered</div>');
+        redirect('auth');
     }
-
+}
+    
     public function registration() {
-        //agar user tak bisa kembali ke hal auth saat berada di hal regis
-        if ($this->session->userdata('email')) {
-            redirect('user'); 
-        }
 
         //memberikan rules
         $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|email_valid|valid_email|is_unique[user.email]', [
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|email_valid|valid_email|is_unique[regis.email]', [
             'is_unique' => 'This email has already been registered'
         ]);
         $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|integer');
@@ -84,13 +86,18 @@ class Auth extends CI_Controller {
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),//crose side scripting
-                'email' => htmlspecialchars($this->input->post('email', true)),
-                'image' => 'default.jpg',
-                'role_id' => 2,
-                'is_active' => 1,
+                'sponsor' => htmlspecialchars($this->input->post('sponsor', true)),
+                'fullname' => htmlspecialchars($this->input->post('fullname', true)),
+                'username' => htmlspecialchars($this->input->post('username', true)),
+                'nik' => htmlspecialchars($this->input->post('nik', true)),
                 'no_hp' => htmlspecialchars($this->input->post('no_hp', true)),
-                'date_create' => time()
+                'email' => htmlspecialchars($this->input->post('email', true)),
+                'npwp' => htmlspecialchars($this->input->post('npwp', true)),
+                'provinsi' => htmlspecialchars($this->input->post('provinsi', true)),
+                'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+                'produk' => htmlspecialchars($this->input->post('produk', true)),
+                'pemdaftaran' => htmlspecialchars($this->input->post('pendaftaran', true)),
+                'bank' => htmlspecialchars($this->input->post('bank', true))
             ];
 
             $this->db->insert('user', $data);
@@ -102,7 +109,7 @@ class Auth extends CI_Controller {
 
     public function logout()
     {
-        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('username');
         $this->session->unset_userdata('role_id');
         
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
@@ -110,4 +117,8 @@ class Auth extends CI_Controller {
         redirect('auth');
     }
 
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
+    }
 }

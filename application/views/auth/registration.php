@@ -97,18 +97,18 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-
+  <form action="<?= base_url('flip'); ?>" method="post">
 <div class="row">
   <div class="col-md-4 order-md-2 mb-4">
   <div class="ps-form__package-product-info">
     <h3 class="ps-form__heading">Produk Yang dipilih</h3>
      <div class="form-group mb-4">
         <label>Produk</label>
-          <select name="select_product" id="select_product" class="form-control">
+          <select name="produk" id="select_product" class="form-control">
             <option value="">Pilih Produk</option>
-            <option value="produk1">Produk 1</option>
-            <option value="produk2">Produk 2</option>
-            <option value="produk3">Produk 3</option>
+            <option value="produk1">BPJS 3 bulan</option>
+            <option value="produk2">BPJS 6 bulan</option>
+            <option value="produk3">BPJS 1 tahun</option>
            </select>
              </div>
                 <div class="content">
@@ -199,7 +199,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-success btn-lg" type="submit" style="width: 100%;">Continue to checkout</button>
+        
     </div>
       </div>    
         </div>
@@ -222,7 +222,7 @@
       <div class="mb-3">
           <label for="name">Fullname</label>
           <div class="input-group">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Fullname" required>
+            <input type="text" class="form-control" name="fullname" id="name" placeholder="Fullname" required>
             <div class="invalid-feedback" style="width: 100%;">
               Your username is required.
             </div>
@@ -260,13 +260,13 @@
         <div class="col-sm-6">
            <div class="form-group mb-4">
                     <label>Email Address</label>
-                        <input type="email" name="agent_email" class="form-control text-lowercase loading-input" placeholder="Enter Your Email">
+                        <input type="email" name="email" class="form-control text-lowercase loading-input" placeholder="Enter Your Email">
                           </div>
                         </div>
                     </div>
                     <div class="form-group mb-4">
                                     <label>NPWP <sup>*</sup></label>
-                                    <input type="text" name="agent_npwp" class="form-control npwp" placeholder="Enter your ID Number">
+                                    <input type="text" name="npwp" class="form-control npwp" placeholder="Enter your ID Number">
                                 </div>                                    
                                 <div class="ps-form__address-info">
                                 <h3 class="ps-form__heading">Information Address</h3>
@@ -275,34 +275,17 @@
                                         <div class="form-group mb-4">
                                             <label>Provinsi<sup>*</sup> </label>
 
-                                            <select name="agent_province" class="form-control rajaongkir-province select_province" data-url="https://demo4.cic-webpro.com/address/selectprovince">
-                                                <option value="" selected disabled>Select Province / Territory</option>
+                                            <select name="provinsi" class="form-control rajaongkir-province select_province" data-url="https://demo4.cic-webpro.com/address/selectprovince">
+                                                <option value="" selected disabled>Pilih Provinsi / Wilayah</option>
                                                 <option value="1" data-area="2">Bali - WILAYAH 2</option><option value="2" data-area="2">Bangka Belitung - WILAYAH 2</option><option value="3" data-area="1">Banten - WILAYAH 1</option><option value="4" data-area="2">Bengkulu - WILAYAH 2</option><option value="5" data-area="1">DI Yogyakarta - WILAYAH 1</option><option value="6" data-area="1">DKI Jakarta - WILAYAH 1</option><option value="7" data-area="3">Gorontalo - WILAYAH 3</option><option value="8" data-area="2">Jambi - WILAYAH 2</option><option value="9" data-area="1">Jawa Barat - WILAYAH 1</option><option value="10" data-area="1">Jawa Tengah - WILAYAH 1</option><option value="11" data-area="1">Jawa Timur - WILAYAH 1</option><option value="12" data-area="2">Kalimantan Barat - WILAYAH 2</option><option value="13" data-area="3">Kalimantan Selatan - WILAYAH 3</option><option value="14" data-area="3">Kalimantan Tengah - WILAYAH 3</option><option value="15" data-area="2">Kalimantan Timur - WILAYAH 2</option><option value="16" data-area="3">Kalimantan Utara - WILAYAH 3</option><option value="17" data-area="2">Kepulauan Riau - WILAYAH 2</option><option value="18" data-area="2">Lampung - WILAYAH 2</option><option value="19" data-area="3">Maluku - WILAYAH 3</option><option value="20" data-area="3">Maluku Utara - WILAYAH 3</option><option value="21" data-area="2">Nanggroe Aceh Darussalam (NAD) - WILAYAH 2</option><option value="22" data-area="3">Nusa Tenggara Barat (NTB) - WILAYAH 3</option><option value="23" data-area="4">Nusa Tenggara Timur (NTT) - WILAYAH 4</option><option value="24" data-area="4">Papua - WILAYAH 4</option><option value="25" data-area="4">Papua Barat - WILAYAH 4</option><option value="26" data-area="2">Riau - WILAYAH 2</option><option value="27" data-area="4">Sulawesi Barat - WILAYAH 4</option><option value="28" data-area="3">Sulawesi Selatan - WILAYAH 3</option><option value="29" data-area="3">Sulawesi Tengah - WILAYAH 3</option><option value="30" data-area="3">Sulawesi Tenggara - WILAYAH 3</option><option value="31" data-area="3">Sulawesi Utara - WILAYAH 3</option><option value="32" data-area="2">Sumatera Barat - WILAYAH 2</option><option value="33" data-area="2">Sumatera Selatan - WILAYAH 2</option><option value="34" data-area="2">Sumatera Utara - WILAYAH 2</option>                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group mb-4">
-                                            <label>CIty/District</label>
-                                            <select name="agent_district" class="form-control rajaongkir-city select_district" data-url="https://demo4.cic-webpro.com/address/selectdistrict">
-                                                <option value="" selected disabled>Select Province first</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group mb-4">
-                                            <label>Kecamatan</label>
-                                            <select name="kec_user" class="form-control select_subdistrict rajaongkir-subdistrict">
-                                                <option value="" selected disabled>Select City/District first</option>
-                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label>Address <sup>*</sup></label>
-                                    <textarea name="addres" class="form-control text-capitalize" rows="2" placeholder="Address & No & RT/ RW.."></textarea>
+                                    <textarea name="alamat" class="form-control text-capitalize" rows="2" placeholder="Address & No & RT/ RW.."></textarea>
                                 </div>
+                                <button class="btn btn-success btn-lg" type="submit" style="width: 100%;">Continue to checkout</button>
                             </div>
                         </div>
         <hr class="mb-4">

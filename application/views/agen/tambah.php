@@ -12,53 +12,50 @@
               </div>
             </div>
             <div class="card-body wrapper-form-register pt-0">
-              <form>
+            <form action="<?= base_url('agen'); ?>" method="post">
                 <!-- Alert Message -->
                 <div id="alert" class="alert display-hide"></div>
 
                 <div class="form-group">
                   <div class="input-group input-group-merge">
                   <label class="col-md-3 form-control-label col-form-label text-dark" for="usernameSponsor">Username Sponsor <span class="required">*</span></label>
-                    <input type="hidden" name="reg_member_sponsor_admin" id="reg_member_sponsor_admin" value="admin" />
-                    <input type="text" class="form-control" id="usernameSponsor" placeholder="Username Sponsor" autocomplete="off" value="" required>
-                    <button class="btn btn-primary" type="button" id="btn_search_sponsor" data-url="https://demo4.cic-webpro.com/member/searchsponsor">
+                    <input type="hidden" name="usernameSponsor" id="reg_member_sponsor_admin" value="admin" />
+                    <input type="text" class="form-control" id="usernameSponsor" placeholder="Username Sponsor" autocomplete="off" value="<?= set_value('usernameSponsor'); ?>" required>
+                    <button class="btn btn-primary" type="button" id="btn_search_sponsor">
                       <i class="fa fa-search"></i>
                     </button>
                   </div>
                 </div>
-
                 <div id="sponsor_info"></div>
-
                 <hr class="mt-3 mb-3">
-
                 <div class="form-group">
                   <div class="input-group input-group-merge">
                   <label class="col-md-3 form-control-label col-form-label text-dark" for="username">Username <span class="required">*</span></label>
-                    <input type="text" class="form-control" id="username" placeholder="Minimal 6 karakter, bisa kombinasi huruf & angka" autocomplete="off" data-url="https://demo4.cic-webpro.com/member/checkusernamestaff" required>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Minimal 6 karakter, bisa kombinasi huruf & angka" autocomplete="off" required value="<?= set_value('username'); ?>">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="input-group input-group-merge">
                   <label class="col-md-3 form-control-label col-form-label text-dark" for="nama">Nama <span class="required">*</span></label>
-                    <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap Agen" autocomplete="off" value="" required>
+                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Lengkap Agen" autocomplete="off" value="<?= set_value('nama'); ?>" required>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="input-group input-group-merge">
                   <label class="col-md-3 form-control-label col-form-label text-dark" for="email">Email <span class="required">*</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" value="<?= set_value('email'); ?>" required>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="input-group input-group-merge">
-                  <label class="col-md-3 form-control-label col-form-label text-dark" for="noTelp">No. HP/WA <span class="required">*</span></label>
+                  <label class="col-md-3 form-control-label col-form-label text-dark" for="no_Telp">No. HP/WA <span class="required">*</span></label>
                     <div class="input-group-prepend">
                       <span class="input-group-text">+62</span>
                     </div>
-                    <input type="tel" class="form-control" id="noTelp" placeholder="8xxxxxxxxx" required>
+                    <input type="tel" class="form-control" name="npwp" name="no_telp" id="no_Telp" placeholder="8xxxxxxxxx" value="<?= set_value('npwp'); ?>" required>
                     <div class="input-group-append">
                       <span class="input-group-text"><i class="fa fa-phone"></i></span>
                     </div>
@@ -71,7 +68,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-address-card"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="nik" placeholder="NIK" required>
+                    <input type="number" class="form-control" name="nik" id="nik" placeholder="NIK" value="<?= set_value('nik'); ?>" required>
                   </div>
                 </div>
 
@@ -81,7 +78,20 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="npwp" placeholder="Isi semua dengan 0 jika tidak ada NPWP">
+                    <input type="tel"  maxlength="14" class="form-control" id="npwp" placeholder="Isi semua dengan 0 jika tidak ada NPWP" name="npwp" value="<?= set_value('npwp'); ?>" pattern="[0-9]{14}">
+                  </div>
+                </div>
+                <!-- <script src="<?= base_url('assets/js/tambah/npwp.js'); ?>"></script> -->
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user"
+                      id="password1" name="password1" placeholder="Password">
+                      <?= form_error("password1", "<small class=text-danger pl-3>", "</small>"); ?>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control form-control-user"
+                          id="password2" name="password2" placeholder="Repeat Password">
+                          <?= form_error("password1", "<small class=text-danger pl-3>", "</small>"); ?>
                   </div>
                 </div>
 
@@ -93,19 +103,11 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-star"></i></span>
                     </div>
-                        <select class="form-control" id="peringkat">
+                        <select class="form-control" id="peringkat" name="peringkat">
                             <option value="basic">Agen Pemula</option>
                             <option value="senior">Agen Senior</option>
                             <option value="executive">Agen Eksekutif</option>
                         </select>
-                  </div>
-                </div>
-
-                <div class="form-group mb-1">
-                  <div class="form-check form-switch mb-3">
-                    <input type="checkbox" class="form-check-input" id="termCondition" value="1">
-                    <label class="custom-control-label" for="termCondition" style="vertical-align: unset;">Saya Setuju Dengan Persayaratan Dan Kondisi Pendaftaran.</label>
-                    <a href="javascript:;" class="term_condition">Term &amp; Condition</a>
                   </div>
                 </div>
 
@@ -125,3 +127,27 @@
     </div>
   </div>
 </div>
+<script>
+  // Ambil elemen tombol Reset
+  var resetButton = document.querySelector('.btn-register-reset');
+
+  // Tambahkan event listener untuk mengatur fungsi resetForm saat tombol diklik
+  resetButton.addEventListener('click', resetForm);
+
+  // Definisikan fungsi resetForm
+  function resetForm() {
+    // Dapatkan elemen form yang ingin direset
+    var formElement = document.querySelector('form');
+
+    // Dapatkan semua elemen input di dalam form
+    var inputElements = formElement.querySelectorAll('input');
+
+    // Reset nilai-nilai dalam elemen input
+    inputElements.forEach(function(input) {
+      input.value = ''; // Mengosongkan nilai input
+    });
+
+    // Contoh pesan untuk menunjukkan bahwa form berhasil direset
+    console.log('Form berhasil direset!');
+  }
+</script>

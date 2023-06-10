@@ -24,38 +24,28 @@
                                             <strong style="font-size: 1.1em;">Login</strong>
                                         </p>
                                     </div>
-                                    <form class="user">
+
+                                    <?= $this->session->flashdata('message'); ?>
+
+                                    <form class="agen" method="post" action="<?= base_url('auth'); ?>">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="user" placeholder="Username" name="user">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="user" placeholder="Username" name="username" value="<?= set_value('username'); ?>">
+                                                <?= form_error("username", "<small class=text-danger pl-3>", "</small>"); ?>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                                <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-eye" id="togglePassword"></i>
                                                     </span>
                                                 </div>
                                             </div>
+                                            <?= form_error("password", "<small class=text-danger pl-3>", '</small>');?>
                                         </div>
                                         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                                        <script>
-                                            $(document).ready(function() {
-                                                $('#togglePassword').click(function() {
-                                                    var passwordInput = $('#exampleInputPassword');
-                                                    var passwordFieldType = passwordInput.attr('type');
-                                                    
-                                                    if (passwordFieldType === 'password') {
-                                                        passwordInput.attr('type', 'text');
-                                                        $('#togglePassword').removeClass('fa-eye').addClass('fa-eye-slash');
-                                                    } else {
-                                                        passwordInput.attr('type', 'password');
-                                                        $('#togglePassword').removeClass('fa-eye-slash').addClass('fa-eye');
-                                                    }
-                                                });
-                                            });
-                                        </script>
+                                        <script src="<?= base_url('assets/js/login/pw.js'); ?>"></script>
                                         <div class="form-group">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
@@ -67,7 +57,7 @@
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="<?= base_url('auth/registration') ?>">Create an Account!</a>
+                                        <a class="small" href="<?= base_url('auth/registration') ?>">Register Account!</a>
                                     </div>
                                     <div class="col-md-6">
                                         <a href="" style="font-weight: bold; font-size: 1.1rem; color: green;">
