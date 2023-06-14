@@ -55,7 +55,7 @@
                                         <option value="cancelled">CANCELLED</option>
                                     </select>
                                 </td>
-                                                                    <td>
+                                    <td>
                                         <select name="search_access" class="form-control form-filter input-sm">
                                             <option value="">Pilih...</option>
                                             <option value="admin">ADMIN</option>

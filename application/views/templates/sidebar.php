@@ -20,7 +20,7 @@ $menu = $this->db->query($queryMenu)->result_array();
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="<?= base_url('pc/index'); ?>">
         <i class="fas fa-fw-light fa-tv text-success"></i>
         <span class="text-light">Home</span></a>
 </li>
@@ -63,7 +63,7 @@ $menu = $this->db->query($queryMenu)->result_array();
     <div id="komisi" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-dark py-2 collapse-inner rounded">
-            <a class="collapse-item text-light" href="komisi/komisi">Komisi</a>
+            <a class="collapse-item text-light" href="komisi">Komisi</a>
             <a class="collapse-item text-light" href="komisi/statement">Statment Komisi</a>
             <a class="collapse-item text-light" href="komisi/wallet">Wallet</a>
             <a class="collapse-item text-light" href="komisi/withdraw">Withdraw</a>

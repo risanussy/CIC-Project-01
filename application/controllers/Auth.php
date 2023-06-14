@@ -70,42 +70,41 @@ class Auth extends CI_Controller {
     }
 }
     
-    public function registration() {
+public function registration()
+{
+    $this->form_validation->set_rules('name', 'Name', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
+        'is_unique' => 'This email has already been registered.'
+    ]);
+    $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|integer');
 
-        //memberikan rules
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|email_valid|valid_email|is_unique[regis.email]', [
-            'is_unique' => 'This email has already been registered'
-        ]);
-        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|integer');
+    if ($this->form_validation->run() == false) {
+        $data['title'] = 'Registration';
+        $this->load->view('auth/registration', $data);
+        $this->load->view('templates/auth_footer');
+    } else {
+        $data = [
+            'sponsor' => $this->input->post('sponsor'),
+            'fullname' => $this->input->post('fullname'),
+            'username' => $this->input->post('username'),
+            'nik' => $this->input->post('nik'),
+            'no_hp' => $this->input->post('no_hp'),
+            'email' => $this->input->post('email'),
+            'npwp' => $this->input->post('npwp'),
+            'provinsi' => $this->input->post('provinsi'),
+            'alamat' => $this->input->post('alamat'),
+            'produk' => $this->input->post('produk'),
+            'pemdaftaran' => $this->input->post('pendaftaran'),
+            'bank' => $this->input->post('bank')
+        ];
 
-    
-        if ($this->form_validation->run() == false) {
-            $data['title'] = 'Registration';
-            $this->load->view('auth/registration', $data);
-            $this->load->view('templates/auth_footer');
-        } else {
-            $data = [
-                'sponsor' => htmlspecialchars($this->input->post('sponsor', true)),
-                'fullname' => htmlspecialchars($this->input->post('fullname', true)),
-                'username' => htmlspecialchars($this->input->post('username', true)),
-                'nik' => htmlspecialchars($this->input->post('nik', true)),
-                'no_hp' => htmlspecialchars($this->input->post('no_hp', true)),
-                'email' => htmlspecialchars($this->input->post('email', true)),
-                'npwp' => htmlspecialchars($this->input->post('npwp', true)),
-                'provinsi' => htmlspecialchars($this->input->post('provinsi', true)),
-                'alamat' => htmlspecialchars($this->input->post('alamat', true)),
-                'produk' => htmlspecialchars($this->input->post('produk', true)),
-                'pemdaftaran' => htmlspecialchars($this->input->post('pendaftaran', true)),
-                'bank' => htmlspecialchars($this->input->post('bank', true))
-            ];
-
-            $this->db->insert('user', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Congratulation! your account has been created. Please Login</div>');
-            redirect('auth');
-        }
+        $this->db->insert('regis', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Congratulation! Your account has been created. Please login.</div>');
+        redirect('auth');
     }
+}
+
 
     public function logout()
     {

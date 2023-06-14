@@ -11,21 +11,20 @@
           </div>
         </div>
         <div class="table-container">
-          <table class="table align-items-center table-flush" id="list">
+          <table class="table align-items-center table-flush" id="list_table">
             <thead class="thead-primary" style="background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;">
               <tr role="row" class="heading">
-                <th scope="col" style="width: 100px; color: white;">#</th>
+              <th scope="col" style="width: 100px; color: white;">#</th>
                 <th scope="col" class="text-center text-light" style="width: 1000px">Username</th>
                 <th scope="col" class="text-center text-light" style="width: 1000px">Nama</th>
                 <th scope="col" class="text-center text-light" style="width: 1000px">Sponsor</th>
                 <th scope="col" class="text-center text-light" style="width: 630px">Peringkat</th>
                 <th scope="col" class="text-center text-light" style="width: 1000px">Kontak</th>
+                <th scope="col" class="text-center text-light" style="width: 600px">Tipe</th>
                 <th scope="col" class="text-center text-light" style="width: 600px">Status</th>
                 <th scope="col" class="text-center text-light" style="width: 1000px">Tanggal Daftar</th>
                 <th scope="col" class="text-center text-light" style="width: 1000px">Terakhir Login</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Proses</th>
               </tr>
-              <tr role="row" class="filter" style="background-color: #f6f9fc">
             </thead>
             <tbody>
               <?php $i = 1; ?>

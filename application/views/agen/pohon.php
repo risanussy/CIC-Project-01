@@ -8,17 +8,25 @@
 
     <div class="generations">
         <div id="generation-10" class="treeview">
-        <ul class="list-group">
-            <?php foreach ($agen as $agent) : ?>
-                <li class="list-group-item node-generation-10 agent-item" data-nodeid="<?= $agent->id ?>" data-sponsor="<?= $agent->usernameSponsor ?>">
-                    <span class="icon expand-icon fa fa-plus"></span>
-                    <span class="icon node-icon fa fa-user"></span>
-                    <!-- <strong style="font-size:13px"><?= $agent->username ?></strong> -->
-                    <small>(<?= $agent->usernameSponsor ?>)</small>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <script>
+            <ul class="list-group">
+                <?php foreach ($agen as $agent) : ?>
+                    <li class="list-group-item node-generation-10 agent-item" data-nodeid="<?= $agent->id ?>" data-sponsor="<?= $agent->usernameSponsor ?>">
+                        <span class="icon expand-icon fa fa-plus"></span>
+                        <span class="icon node-icon fa fa-user"></span>
+                        <strong style="font-size:13px"><?= $agent->username ?></strong>
+                        <small>(<?= $agent->usernameSponsor ?>)</small>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <hr style="margin-top: 0;">
+    <a href="javascript:;" class="btn btn-info loadmore"><i class="fa fa-refresh"></i> Tampilkan Lebih...</a>
+</div>
+
+<script type="text/javascript">
     $(document).ready(function() {
         $('.agent-item').on('click', function() {
             var sponsor = $(this).data('sponsor');
@@ -33,6 +41,7 @@
                                 <span class="icon expand-icon fa fa-plus"></span>
                                 <span class="icon node-icon fa fa-user"></span>
                                 <strong style="font-size:13px">${agent.username}</strong>
+                                <small>${agent.usernameSponsor}</small>
                             </li>`
                         );
                     });
@@ -40,19 +49,8 @@
             });
         });
     });
-    </script>
-</div>
-    </div>
 
-    <br>
-    <hr style="margin-top: 0;">
-    <a href="javascript:;" class="btn btn-info loadmore"><i class="fa fa-refresh"></i> Tampilkan Lebih...</a>
-</div>
-
-
-<script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
-        var generations = document.querySelector(".generations");
         var loadMoreBtn = document.querySelector(".loadmore");
 
         function loadMoreGenerations() {

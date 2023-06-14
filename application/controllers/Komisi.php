@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Komisi extends CI_Controller 
 {
 
-    public function komisi()
+    public function index()
     {
         $data['title'] = 'Angga Web';
         

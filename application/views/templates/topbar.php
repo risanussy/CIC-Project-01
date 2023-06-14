@@ -22,8 +22,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-light small">Djo26</span>
-                                <!-- tambahkan <?= $user['name']; ?> jikaa sudah memiliki tabel -->
+                                <span class="mr-2 d-none d-lg-inline text-light small">Hacker</span>
+                                <!-- <?= $agen['nama']; ?> -->
                                 <img class="img-profile rounded-circle"
                                     src="<?= base_url('assets/img/profile/default.jpg'); ?>">
                                     <!-- concut jika sudah memiliki tabel  . $user['image']; -->

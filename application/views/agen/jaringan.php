@@ -69,14 +69,19 @@
             </thead>
             <tbody>
             <th>
-                <td>1.</td>
-                <td>anj</td>
-                <td>anj</td>
-                <td>anj</td>
-                <td>anj</td>
-                <td>anj</td>
-                <td>anj</td>
-                <td>anj</td>
+            <?php $i = 1; ?>
+              <?php foreach ($demobc as $row) : ?>
+                <tr>
+                  <td><?= $i; ?></td>
+                  <td><?= $row['username']; ?></td>
+                  <td><?= $row['nama']; ?></td>
+                  <td><?= $row['usernameSponsor']; ?></td>
+                  <td><?= $row['peringkat']; ?></td>
+                  <td></td>
+                  <td><?= $row['date_create']; ?></td>
+                  <td><?= $row['last_login']; ?></td>
+                  </td>
+                </tr>
             </th>
             <!-- Data akan ditempatkan di sini -->
           </tbody>
