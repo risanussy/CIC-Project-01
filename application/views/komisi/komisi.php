@@ -62,6 +62,7 @@
                                                             </tr>
                                                        </thead>
                                                        <tbody class="list">
+<<<<<<< HEAD
                                                             <tr>
                                                                  <td>1.</td>
                                                                  <td>agenq01</td>
@@ -71,6 +72,19 @@
                                                                            style="background-color: green; border: none; color: white; text-align: center;">Detail</button>
                                                                  </td>
                                                             </tr>
+=======
+                                                       <?php $i = 1; ?>
+                                                            <?php foreach ($bc_komisi as $row) : ?>
+                                                                 <tr>
+                                                                      <td><?= $i; ?></td>
+                                                                      <td><?= $row['username']; ?></td>
+                                                                      <td><?= $row['nama']; ?></td>
+                                                                      <td><?= $row['jumlah']; ?></td>
+                                                                      <td></td>
+                                                                 </tr>
+                                                                 <?php $i++; ?>
+                                                            <?php endforeach; ?>
+>>>>>>> 3b95c5b47898fb87a0714e082b9c3fde3fd02888
                                                        </tbody>
                                                   </table>
                                              </div>

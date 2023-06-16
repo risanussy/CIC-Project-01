@@ -98,13 +98,17 @@ public function registration()
             'bank' => $this->input->post('bank')
         ];
 
-        $this->db->insert('regis', $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-        Congratulation! Your account has been created. Please login.</div>');
-        redirect('auth');
+        if ($this->db->insert('regis', $data)) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Congratulation! Your account has been created. Please login.</div>');
+            redirect('auth');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Error occurred while creating your account. Please try again.</div>');
+            redirect('auth/registration');
+        }
     }
 }
-
 
     public function logout()
     {

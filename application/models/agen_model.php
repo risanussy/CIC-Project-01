@@ -4,4 +4,5 @@ class Agen_model extends CI_Model {
         $query = $this->db->get('agen');
         return $query->result();
     }
+
 }
