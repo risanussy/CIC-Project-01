@@ -40,7 +40,7 @@
                                    <div class="tab-content" id="bonusListContent">
                                         <div class="tab-pane fade show active" id="tabs-total_bonus" role="tabpanel" aria-labelledby="tabs-total_bonus-tab">
                                              <div class="table-container">
-                                                  <table class="table align-items-center table-flush" id="list_table_total_bonus">
+                                                  <table class="table align-items-center table-flush cell-border stripe order-column hover" id="list_table">
                                                        <thead class="bg-success">
                                                             <tr role="row" class="heading" style="color: white !important;">
                                                                  <th scope="col" style="width: 10px">#</th>
@@ -51,17 +51,13 @@
                                                             </tr>
                                                        </thead>
                                                        <tbody class="list">
-                                                       <?php $i = 1; ?>
-                                                            <?php foreach ($bc_komisi as $row) : ?>
-                                                                 <tr>
-                                                                      <td><?= $i; ?></td>
-                                                                      <td><?= $row['username']; ?></td>
-                                                                      <td><?= $row['nama']; ?></td>
-                                                                      <td><?= $row['jumlah']; ?></td>
-                                                                      <td></td>
-                                                                 </tr>
-                                                                 <?php $i++; ?>
-                                                            <?php endforeach; ?>
+                                                            <tr>
+                                                                 <td  class="text-center"></td>
+                                                                 <td  class="text-center"></td>
+                                                                 <td  class="text-center">AGEN Q NOL SATU</td>
+                                                                 <td  class="text-center">475.300</td>
+                                                                 <td  class="text-center"><button style="background-color: green; border: none; color: white; text-align: center;">Detail</button></td>
+                                                            </tr>
                                                        </tbody>
                                                   </table>
                                              </div>
@@ -108,4 +104,3 @@
      </div>
 </div>
 <!-- END CONTENT -->
-

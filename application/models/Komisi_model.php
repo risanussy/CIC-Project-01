@@ -5,8 +5,10 @@ class Komisi_model extends CI_Model
 {
     public function getSubMenu()
     {
-        $query = "SELECT `demobc`.*, `agent`.`username` 
-                  FROM `agent` JOIN `demobc` ON `agent`.`username_id`=`demobc`.`id`";
+        $query = "SELECT bc_komisi.*, agen.username, agen.nama
+        FROM bc_komisi
+        JOIN agen ON bc_komisi.id_agen = agen.id
+        ";
 
         return $this->db->query($query)->result_array();          
     }
