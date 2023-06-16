@@ -80,16 +80,6 @@
                                                                                 name="search_nominal_max"
                                                                                 placeholder="Max" />
                                                                       </td>
-                                                                      <td style="text-align: center;">
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Search"><i
-                                                                                     class="fa-solid fa-magnifying-glass"></i></button>
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Delet"><i
-                                                                                     class="fa-solid fa-trash-can"></i></button>
-                                                                      </td>
                                                                  </tr>
                                                             </thead>
                                                             <tbody class="list">
@@ -202,19 +192,6 @@
                                                                                 class="form-control form-control-sm form-filter text-center numbermask"
                                                                                 name="search_nominal_max"
                                                                                 placeholder="Max" />
-                                                                      </td>
-                                                                      <td><input type="text"
-                                                                                class="form-control form-filter input-sm"
-                                                                                name="search_desc" /></td>
-                                                                      <td style="text-align: center;">
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Search"><i
-                                                                                     class="fa-solid fa-magnifying-glass"></i></button>
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Delet"><i
-                                                                                     class="fa-solid fa-trash-can"></i></button>
                                                                       </td>
                                                                  </tr>
                                                             </thead>

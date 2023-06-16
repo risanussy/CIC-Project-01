@@ -57,46 +57,6 @@
                                                        <th scope="col" class="text-center" width="10%">Total Omset</th>
                                                        <th scope="col" class="text-center" width="10%">Proses</th>
                                                   </tr>
-                                                  <tr role="row" class="filter" style="background-color: #f6f9fc">
-                                                       <td></td>
-                                                       <td>
-                                                            <input type="text"
-                                                                 class="form-control form-control-sm form-filter"
-                                                                 name="search_username" />
-                                                       </td>
-                                                       <td>
-                                                            <div class="mb-1">
-                                                                 <input type="text"
-                                                                      class="form-control form-control-sm form-filter text-center numbermask"
-                                                                      name="search_qty_min" placeholder="Min" />
-                                                            </div>
-                                                            <input type="text"
-                                                                 class="form-control form-control-sm form-filter text-center numbermask"
-                                                                 name="search_qty_max" placeholder="Max" />
-                                                       </td>
-                                                       <td>
-                                                            <div class="mb-1">
-                                                                 <input type="text"
-                                                                      class="form-control form-control-sm form-filter text-center numbermask"
-                                                                      name="search_omzet_min" placeholder="Min" />
-                                                            </div>
-                                                            <input type="text"
-                                                                 class="form-control form-control-sm form-filter text-center numbermask"
-                                                                 name="search_omzet_max" placeholder="Max" />
-                                                       </td>
-                                                       <td style="text-align: center;">
-                                                            <button
-                                                                 class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                 id="btn_reset_list_personal_omzet_total"
-                                                                 title="Search"><i
-                                                                      class="fa-solid fa-magnifying-glass"></i></button>
-                                                            <button
-                                                                 class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                 id="btn_reset_list_personal_omzet_total"
-                                                                 title="Delet"><i
-                                                                      class="fa-solid fa-trash-can"></i></button>
-                                                       </td>
-                                                  </tr>
                                              </thead>
                                              <tbody class="list">
                                                   <!-- Data Will Be Placed Here -->
@@ -131,21 +91,6 @@
                                                        <th scope="col" class="text-center">Proses</th>
                                                   </tr>
                                              </thead>
-                                             <tbody class="list">
-                                                  <!-- Data Will Be Placed Here -->
-                                                  <tr>
-                                                       <td>1.</td>
-                                                       <td>agungberkah01</td>
-                                                       <td>
-                                                            <button
-                                                                 class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel"
-                                                                 title="Perdana">Perdana</button>
-                                                       </td>
-                                                       <td>3 Pcs</td>
-                                                       <td>Rp 389.000</td>
-                                                       <td>Omzet Registrasi Perdana (INV/00001078)</td>
-                                                       <td>2023-03-29</td>
-                                                  </tr>
                                              </tbody>
                                         </table>
                                    </div>

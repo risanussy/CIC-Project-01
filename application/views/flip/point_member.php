@@ -59,38 +59,6 @@
                                                                       <th scope="col" class="text-center">Jumlah</th>
                                                                       <th scope="col" class="text-center">Proses</th>
                                                                  </tr>
-                                                                 <tr role="row" class="filter"
-                                                                      style="background-color: #f6f9fc">
-                                                                      <td></td>
-                                                                      <td><input type="text"
-                                                                                class="form-control form-control-sm form-filter"
-                                                                                name="search_username" /></td>
-                                                                      <td><input type="text"
-                                                                                class="form-control form-control-sm form-filter"
-                                                                                name="search_name" /></td>
-                                                                      <td>
-                                                                           <div class="mb-1">
-                                                                                <input type="text"
-                                                                                     class="form-control form-control-sm form-filter text-center numbermask"
-                                                                                     name="search_nominal_min"
-                                                                                     placeholder="Min" />
-                                                                           </div>
-                                                                           <input type="text"
-                                                                                class="form-control form-control-sm form-filter text-center numbermask"
-                                                                                name="search_nominal_max"
-                                                                                placeholder="Max" />
-                                                                      </td>
-                                                                      <td style="text-align: center;">
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Search"><i
-                                                                                     class="fa-solid fa-magnifying-glass"></i></button>
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Delet"><i
-                                                                                     class="fa-solid fa-trash-can"></i></button>
-                                                                      </td>
-                                                                 </tr>
                                                             </thead>
                                                             <tbody class="list">
                                                                  <!-- Data Will Be Placed Here -->
@@ -129,82 +97,7 @@
                                                                       </th>
                                                                       <th scope="col" class="text-center">Proses</th>
                                                                  </tr>
-                                                                 <tr role="row" class="filter"
-                                                                      style="background-color: #f6f9fc">
-                                                                      <td></td>
-                                                                      <td>
-                                                                           <div class="input-group input-group-sm date date-picker mb-1"
-                                                                                data-date-format="yyyy-mm-dd">
-                                                                                <input type="text"
-                                                                                     class="form-control form-control-sm form-filter"
-                                                                                     readonly
-                                                                                     name="search_datecreated_min"
-                                                                                     placeholder="From" />
-                                                                                <span class="input-group-btn">
-                                                                                     <button
-                                                                                          class="btn btn-sm btn-white btn-flat shadow"
-                                                                                          type="button"><i
-                                                                                               class="fa-solid fa-calendar-days"
-                                                                                               style="color:green"></i></button>
-                                                                                </span>
-                                                                           </div>
-                                                                           <div class="input-group input-group-sm date date-picker"
-                                                                                data-date-format="yyyy-mm-dd">
-                                                                                <input type="text"
-                                                                                     class="form-control form-control-sm form-filter"
-                                                                                     readonly
-                                                                                     name="search_datecreated_max"
-                                                                                     placeholder="To" />
-                                                                                <span class="input-group-btn">
-                                                                                     <button
-                                                                                          class="btn btn-sm btn-white btn-flat shadow"
-                                                                                          type="button"><i
-                                                                                               class="fa-solid fa-calendar-days"
-                                                                                               style="color:green"></i></button>
-                                                                                </span>
-                                                                           </div>
-                                                                      </td>
-                                                                      <td><input type="text"
-                                                                                class="form-control form-control-sm form-filter"
-                                                                                name="search_username" /></td>
-                                                                      <td><input type="text"
-                                                                                class="form-control form-control-sm form-filter"
-                                                                                name="search_name" /></td>
-                                                                      <td>
-                                                                           <select name="search_type"
-                                                                                class="form-control form-filter input-sm">
-                                                                                <option value="">Tipe...</option>
-                                                                                <option value="IN">IN</option>
-                                                                                <option value="OUT">OUT</option>
-                                                                           </select>
-                                                                      </td>
-                                                                      <td>
-                                                                           <div class="mb-1">
-                                                                                <input type="text"
-                                                                                     class="form-control form-control-sm form-filter text-center numbermask"
-                                                                                     name="search_nominal_min"
-                                                                                     placeholder="Min" />
-                                                                           </div>
-                                                                           <input type="text"
-                                                                                class="form-control form-control-sm form-filter text-center numbermask"
-                                                                                name="search_nominal_max"
-                                                                                placeholder="Max" />
-                                                                      </td>
 
-                                                                      <td><input type="text"
-                                                                                class="form-control form-filter input-sm"
-                                                                                name="search_desc" /></td>
-                                                                      <td style="text-align: center;">
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Search"><i
-                                                                                     class="fa-solid fa-magnifying-glass"></i></button>
-                                                                           <button
-                                                                                class="btn btn-sm btn-outline-success btn-tooltip filter-cancel"
-                                                                                title="Delet"><i
-                                                                                     class="fa-solid fa-trash-can"></i></button>
-                                                                      </td>
-                                                                 </tr>
                                                             </thead>
                                                             <tbody class="list">
                                                                  <!-- Data Will Be Placed Here -->
