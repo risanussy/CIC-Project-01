@@ -73,7 +73,7 @@ class Auth extends CI_Controller {
 public function registration()
 {
     $this->form_validation->set_rules('name', 'Name', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
+    $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[demobc.email]', [
         'is_unique' => 'This email has already been registered.'
     ]);
     $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|integer');
