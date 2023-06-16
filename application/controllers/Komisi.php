@@ -36,4 +36,15 @@ class Komisi extends CI_Controller
         $this->load->view('komisi/wallet', $data);
         $this->load->view('templates/footer');
     }
+
+    public function withdraw()
+    {
+        $data['title'] = 'Angga Web';
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('komisi/withdraw', $data);
+        $this->load->view('templates/footer');
+    }
 }

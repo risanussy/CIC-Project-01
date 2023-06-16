@@ -63,10 +63,10 @@ $menu = $this->db->query($queryMenu)->result_array();
     <div id="komisi" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-dark py-2 collapse-inner rounded">
-            <a class="collapse-item text-light" href="komisi">Komisi</a>
-            <a class="collapse-item text-light" href="komisi/statement">Statment Komisi</a>
-            <a class="collapse-item text-light" href="komisi/wallet">Wallet</a>
-            <a class="collapse-item text-light" href="komisi/withdraw">Withdraw</a>
+            <a class="collapse-item text-light" href="<?= base_url('komisi'); ?>">Komisi</a>
+            <a class="collapse-item text-light" href="<?= base_url('komisi/statement'); ?>">Statment Komisi</a>
+            <a class="collapse-item text-light" href="<?= base_url('komisi/wallet'); ?>">Wallet</a>
+            <a class="collapse-item text-light" href="<?= base_url('komisi/withdraw'); ?>">Withdraw</a>
         </div>
     </div>
 </li>

@@ -1,62 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-     <head>
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-     <title>B-community</title>
+   <title>B-community</title>
 
-     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/home/style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     </head>
-     <body>
-          <!-- Navbar start -->
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="container">
-               <a class="navbar-brand" href="#">
-                    <img src="<?= base_url('assets/'); ?>img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-                    B-community
-               </a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
+   <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/home/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <!-- Navbar start -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+         <a class="navbar-brand" href="#">
+            <img src="<?= base_url('assets/'); ?>img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            B-community
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
 
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Bantuan</a>
-                    </li>       
-               </ul>
-               <form class="form-inline my-2 my-lg-0">
-                    <a href="<?= base_url('auth/registration'); ?>" class="btn btn-outline-success mr-3 my-2 my-sm-0" type="submit">Register</a>
-                    <a href="<?= base_url('auth/'); ?>" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
-               </form>
-               </div>
-               </div>
-          </nav>
-          <!-- navbar and -->
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Bantuan</a>
+               </li>       
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+               <a href="<?= base_url('auth/registration'); ?>" class="btn btn-outline-success mr-3 my-2 my-sm-0" type="submit">Register</a>
+               <a href="<?= base_url('auth/'); ?>" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
+            </form>
+         </div>
+      </div>
+   </nav>
+   <!-- Navbar and -->
 
+   <!-- Jumbotron start -->
+   <div class="jumbotron jumbotron-fluid j-fix d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+         <h1 class="display-2">B-Community</h1>
+         <p class="lead">Platform bisnis community solusi bisnis untuk keluarga Anda</p>
+      </div>
+   </div>
+   <!-- Jumbotron and -->
 
-          <!-- jumboton start -->
-          <div class="jumbotron jumbotron-fluid j-fix d-flex justify-content-center align-items-center ">
-               <div class="container text-center">
-                    <h1 class="display-2">B-Community</h1>
-                         <p class="lead">platform bisnis community solusi bisnis untuk keluarga anda</p>
-               </div>
-          </div>
-          <!-- jumbotron and -->
-          <div class="container pt-2">
-               <!-- Visi Misi -->
-               <h2 class="text-center">Visi Dan Misi</h2>
-               <br>
-               <div class="row">
+   <div class="container pt-2">
+      <!-- Visi Misi -->
+      <h2 class="text-center">Visi Dan Misi</h2>
+      <br>
+      <div class="row">
                     <div class="col text-justify">
                          <p> 
                               Menjadi perusahaan pemasaran dan membangun ekonomi gotong royong dalam sistem keagenan di indonesia,berkontribusi meningkatkan ekonomi di era yang sulit ini dengan menciptakan wadah dan peluang baru melalui platfrom kami. menghasilkan pengusaha yang dapat dibanggakan, baik sebagai pemasar maupun produsen.
