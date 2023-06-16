@@ -91,7 +91,7 @@ class Agen extends CI_Controller
 
     public function jaringan()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -106,7 +106,7 @@ class Agen extends CI_Controller
         
         $data['agen'] = $this->agen_model->get_all_agents();
 
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

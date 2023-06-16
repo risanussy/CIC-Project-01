@@ -5,7 +5,7 @@ class PC extends CI_Controller
 {
     public function index()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
