@@ -26,6 +26,7 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="path_to_select2/select2.min.css" rel="stylesheet" />
     <script src="path_to_select2/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 </head>

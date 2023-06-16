@@ -4,7 +4,7 @@
           <div class="header-body">
                <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-5 ">
-                         <a href="https://demo4.cic-webpro.com/staff/new" class="btn btn-sm btn-neutral shadow"><i class="fa fa-plus mr-1"></i> Tambah Staff</a>
+                         <a href="" class="btn btn-sm btn-neutral shadow"><i class="fa fa-plus mr-1"></i> Tambah Staff</a>
                     </div>
                </div>
           </div>
@@ -23,7 +23,7 @@
                          </div>
                     </div>
                     <div class="table-container">
-                         <table class="table align-items-center table-flush" id="list_table_staff" data-url="https://demo4.cic-webpro.com/staff/managelist">
+                         <table class="table align-items-center table-flush" id="list_table_staff" >
                          <thead class="bg-success">
                               <tr role="row" class="heading" style="color:white !important;">
                                    <th scope="col" style="width: 10px">#</th>

@@ -10,12 +10,21 @@
         <div id="generation-10" class="treeview">
             <ul class="list-group">
                 <?php foreach ($agen as $agent) : ?>
-                    <li class="list-group-item node-generation-10 agent-item" data-nodeid="<?= $agent->id ?>" data-sponsor="<?= $agent->usernameSponsor ?>">
-                        <span class="icon expand-icon fa fa-plus"></span>
-                        <span class="icon node-icon fa fa-user"></span>
-                        <strong style="font-size:13px"><?= $agent->username ?></strong>
-                        <small>(<?= $agent->usernameSponsor ?>)</small>
-                    </li>
+                    <?php if ($agent->usernameSponsor == 'admin'): ?>
+                        <li class="list-group-item node-generation-10 agent-item" data-nodeid="<?= $agent->id ?>" data-sponsor="<?= $agent->usernameSponsor ?>">
+                            <span class="icon expand-icon fa fa-minus"></span>
+                            <span class="icon node-icon fa fa-user"></span>
+                            <strong style="font-size:13px"><?= $agent->username ?></strong>
+                            <small>(<?= $agent->usernameSponsor ?>)</small>
+                        </li>
+                    <?php else: ?>
+                        <li class="list-group-item node-generation-10 agent-item" data-nodeid="<?= $agent->id ?>" data-sponsor="<?= $agent->usernameSponsor ?>">
+                            <span class="icon expand-icon fa fa-plus"></span>
+                            <span class="icon node-icon fa fa-user"></span>
+                            <strong style="font-size:13px"><?= $agent->username ?></strong>
+                            <small>(<?= $agent->usernameSponsor ?>)</small>
+                        </li>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -30,23 +39,33 @@
     $(document).ready(function() {
         $('.agent-item').on('click', function() {
             var sponsor = $(this).data('sponsor');
-            $.ajax({
-                url: '/agen/get_agents_by_sponsor/' + sponsor,
-                method: 'GET',
-                success: function(data) {
-                    var agents = JSON.parse(data);
-                    agents.forEach(function(agent) {
-                        $('.list-group').append(
-                            `<li class="list-group-item node-generation-10 agent-item" data-nodeid="${agent.id}" data-sponsor="${agent.usernameSponsor}">
-                                <span class="icon expand-icon fa fa-plus"></span>
-                                <span class="icon node-icon fa fa-user"></span>
-                                <strong style="font-size:13px">${agent.username}</strong>
-                                <small>${agent.usernameSponsor}</small>
-                            </li>`
-                        );
+            if (sponsor == 'admin') {
+                $(this).toggleClass('expanded');
+                $(this).siblings().toggle();
+            } else {
+                var currentElement = $(this);
+                if (!currentElement.hasClass('expanded')) {
+                    $.ajax({
+                        url: '/agen/get_agents_by_sponsor/' + sponsor,
+                        method: 'GET',
+                        success: function(data) {
+                            var agents = JSON.parse(data);
+                            agents.forEach(function(agent) {
+                                currentElement.after(
+                                    `<li class="list-group-item node-generation-10 agent-item" data-nodeid="${agent.id}" data-sponsor="${agent.usernameSponsor}">
+                                        <span class="icon expand-icon fa fa-plus"></span>
+                                        <span class="icon node-icon fa fa-user"></span>
+                                        <strong style="font-size:13px">${agent.username}</strong>
+                                        <small>${agent.usernameSponsor}</small>
+                                    </li>`
+                                );
+                            });
+                        }
                     });
                 }
-            });
+                currentElement.toggleClass('expanded');
+                currentElement.siblings().toggle();
+            }
         });
     });
 
