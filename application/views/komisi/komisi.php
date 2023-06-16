@@ -51,13 +51,17 @@
                                                             </tr>
                                                        </thead>
                                                        <tbody class="list">
-                                                            <tr>
-                                                                 <td>1.</td>
-                                                                 <td>agenq01</td>
-                                                                 <td>AGEN Q NOL SATU</td>
-                                                                 <td>475.300</td>
-                                                                 <td><button style="background-color: green; border: none; color: white; text-align: center;">Detail</button></td>
-                                                            </tr>
+                                                       <?php $i = 1; ?>
+                                                            <?php foreach ($bc_komisi as $row) : ?>
+                                                                 <tr>
+                                                                      <td><?= $i; ?></td>
+                                                                      <td><?= $row['username']; ?></td>
+                                                                      <td><?= $row['nama']; ?></td>
+                                                                      <td><?= $row['jumlah']; ?></td>
+                                                                      <td></td>
+                                                                 </tr>
+                                                                 <?php $i++; ?>
+                                                            <?php endforeach; ?>
                                                        </tbody>
                                                   </table>
                                              </div>
