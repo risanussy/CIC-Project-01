@@ -30,6 +30,7 @@
                   <td class="text-center"><?= $i; ?></td>
                   <td class="text-center"><?= $row['username']; ?></td>
                   <td class="text-center"><?= $row['nama']; ?></td>
+                  <td class="text-center"><span class="badge badge-danger"><?= $row['usernameSponsor']; ?></span></td>
                   <td class="text-center"><?= $row['peringkat']; ?></td>
                   <td class="text-center">
                     <?php if ($row['usernameSponsor'] == 'admin'): ?>
