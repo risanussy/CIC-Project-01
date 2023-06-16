@@ -6,7 +6,7 @@ class Komisi extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -17,7 +17,7 @@ class Komisi extends CI_Controller
 
     public function statement()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -28,7 +28,7 @@ class Komisi extends CI_Controller
 
     public function wallet()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -39,7 +39,7 @@ class Komisi extends CI_Controller
 
     public function withdraw()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

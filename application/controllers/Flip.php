@@ -10,7 +10,7 @@ class Flip extends CI_Controller
     
     public function index()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -21,7 +21,7 @@ class Flip extends CI_Controller
 
     public function inquery()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -32,7 +32,7 @@ class Flip extends CI_Controller
 
     public function history()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -44,7 +44,7 @@ class Flip extends CI_Controller
     //komisi Controller
     public function komisi()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -55,7 +55,7 @@ class Flip extends CI_Controller
 
     public function statement()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -66,7 +66,7 @@ class Flip extends CI_Controller
 
     public function wallet()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -77,7 +77,7 @@ class Flip extends CI_Controller
 
     public function withdraw()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -90,7 +90,7 @@ class Flip extends CI_Controller
 
     public function regis()
     {       
-        $data['title'] = 'Angga Web | Regis';
+        $data['title'] = 'B-community | Regis';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -101,7 +101,7 @@ class Flip extends CI_Controller
 
     public function omset()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -112,7 +112,7 @@ class Flip extends CI_Controller
 
     public function personal()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -123,7 +123,7 @@ class Flip extends CI_Controller
 
     public function point_member()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -134,7 +134,7 @@ class Flip extends CI_Controller
 
     public function reward()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -145,7 +145,7 @@ class Flip extends CI_Controller
 
     public function bonus()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

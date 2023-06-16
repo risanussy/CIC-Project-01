@@ -18,7 +18,7 @@
                                         <div class="col-auto">
                                              <div
                                                   class="icon icon-shape bg-gradient-success text-white rounded-circle shadow">
-                                                  <i class="fas fa-users text-white p-3"></i>
+                                                  <i class="circle-icon fas fa-users text-white p-3"></i>
                                              </div>
                                         </div>
                                    </div>
@@ -37,7 +37,7 @@
                                         <div class="col-auto">
                                              <div
                                                   class="icon icon-shape bg-gradient-success text-white rounded-circle shadow">
-                                                  <i class="fas fa-dollar-sign p-3"></i>
+                                                  <i class="circle-icon fas fa-dollar-sign p-3"></i>
                                              </div>
                                         </div>
                                    </div>
@@ -55,7 +55,7 @@
                                         <div class="col-auto">
                                              <div
                                                   class="icon icon-shape bg-gradient-success text-white rounded-circle shadow">
-                                                  <i class="fas fa-money-bill p-3"></i>
+                                                  <i class="circle-icon fas fa-money-bill p-3"></i>
                                              </div>
                                         </div>
                                    </div>
