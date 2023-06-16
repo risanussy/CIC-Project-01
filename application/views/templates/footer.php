@@ -57,7 +57,6 @@ $(document).ready(function() {
      });
 });
 </script>
-
 <script>
 $(document).ready(function() {
      $('#btn-register').click(function(e) {
@@ -119,6 +118,7 @@ $(document).ready(function() {
      });
 });
 </script>
+
 
 </body>
 
