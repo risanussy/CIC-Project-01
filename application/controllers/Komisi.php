@@ -7,14 +7,20 @@ class Komisi extends CI_Controller
     public function index()
     {
         $data['title'] = 'B-community';
-        
+    
+        // Load model Komisi_model
+        $this->load->model('Komisi_model');
+    
+        // Panggil method getSubMenu() dari model untuk mengambil data komisi
+        $data['komisi_data'] = $this->Komisi_model->getSubMenu();
+    
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('komisi/komisi', $data);
         $this->load->view('templates/footer');
     }
-
+        
     public function statement()
     {
         $data['title'] = 'B-community';

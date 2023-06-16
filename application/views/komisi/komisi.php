@@ -51,13 +51,17 @@
                                                             </tr>
                                                        </thead>
                                                        <tbody class="list">
+                                                       <?php $i = 1; ?>
+                                                       <?php foreach ($komisi_data as $row) : ?>
                                                             <tr>
-                                                                 <td  class="text-center"></td>
-                                                                 <td  class="text-center"></td>
-                                                                 <td  class="text-center">AGEN Q NOL SATU</td>
-                                                                 <td  class="text-center">475.300</td>
-                                                                 <td  class="text-center"><button style="background-color: green; border: none; color: white; text-align: center;">Detail</button></td>
+                                                                 <td class="text-center"><?= $i; ?></td>
+                                                                 <td class="text-center"><?= $row['username']; ?></td>
+                                                                 <td class="text-center"><?= $row['nama']; ?></td>
+                                                                 <td class="text-center"><?= $row['jumlah']; ?></td>
+                                                                 <td class="text-center"><button style="background-color: green; border: none; color: white; text-align: center;">Proses</button></td>
                                                             </tr>
+                                                       <?php $i++; ?>
+                                                       <?php endforeach; ?>     
                                                        </tbody>
                                                   </table>
                                              </div>
