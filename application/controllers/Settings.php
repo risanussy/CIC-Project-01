@@ -6,7 +6,7 @@ class Settings extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -17,7 +17,7 @@ class Settings extends CI_Controller
 
     public function notifikasi()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -28,7 +28,7 @@ class Settings extends CI_Controller
 
     public function withdraw2()
     {
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

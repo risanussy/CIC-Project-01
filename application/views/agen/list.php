@@ -11,63 +11,59 @@
           </div>
         </div>
         <div class="table-container">
-          <table class="table align-items-center table-flush" id="list_table">
-            <thead class="thead-primary" style="background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;">
-              <tr role="row" class="heading">
-              <th scope="col" style="width: 100px; color: white;">#</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Username</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Nama</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Sponsor</th>
-                <th scope="col" class="text-center text-light" style="width: 630px">Peringkat</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Kontak</th>
-                <th scope="col" class="text-center text-light" style="width: 600px">Tipe</th>
-                <th scope="col" class="text-center text-light" style="width: 600px">Status</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Tanggal Daftar</th>
-                <th scope="col" class="text-center text-light" style="width: 1000px">Terakhir Login</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $i = 1; ?>
-              <?php foreach ($agen as $row) : ?>
-                <tr>
-                  <td><?= $i; ?></td>
-                  <td><?= $row['username']; ?></td>
-                  <td><?= $row['nama']; ?></td>
-                  <td><?= $row['usernameSponsor']; ?></td>
-                  <td><?= $row['peringkat']; ?></td>
-                  <td>
-                    <span><?= $row['no_telp']; ?></span><br>
+        <table class="table align-items-center table-flush cell-border stripe order-column hover" id="list_table">
+          <thead class="thead-primary" style="background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;">
+            <tr role="row" class="heading">
+              <th scope="col" style="width: 10px; color: white;">#</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Username</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Nama</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Sponsor</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Peringkat</th>
+              <th scope="col" class="text-center text-light" style="width: 250px;">Kontak</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Tipe</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Status</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Tanggal Daftar</th>
+              <th scope="col" class="text-center text-light" style="width: 150px;">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $i = 1; ?>
+            <?php foreach ($agen as $row) : ?>
+              <tr>
+                  <td class="text-center"><?= $i; ?></td>
+                  <td class="text-center"><?= $row['username']; ?></td>
+                  <td class="text-center"><?= $row['nama']; ?></td>
+                  <td class="text-center"><span class="badge badge-danger"><?= $row['usernameSponsor']; ?></span></td>
+                  <td class="text-center"><?= $row['peringkat']; ?></td>
+                  <td class="text-center">
+                    <span><span>+62</span><?= $row['no_telp']; ?></span><br>
                     <span><?= $row['email']; ?></span>
                   </td>
-                  <td>
+                  <td class="text-center">
                     <?php if ($row['is_active'] == 1): ?>
-                      Active
+                      <span class="badge badge-success">Active</span>
                     <?php else: ?>
-                      Blacklist
+                      <span class="badge badge-danger">Blacklist</span>
                     <?php endif; ?>
                   </td>
-                  <td><?= $row['date_create']; ?></td>
-                  <td><?= $row['last_login']; ?></td>
-                  <td>
-                    <a href="#" class="btn btn-sm btn-outline-success btn-tooltip status-member" data-original-title="Status Member">
+                  <td class="text-center"><?= $row['date_create']; ?></td>
+                  <td class="text-center"><?= $row['last_login']; ?></td>
+                  <td class="text-center">
+                    <a href="<?= base_url('pc/sm') ?>" class="btn btn-sm btn-outline-success btn-tooltip status-member" data-original-title="Status Member">
                       <i class="fas fa-user profile-icon"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-outline-success btn-tooltip status-member" data-original-title="Generation">
+                    <a href="<?= base_url('agen/pohon') ?>" class="btn btn-sm btn-outline-success btn-tooltip status-member" data-original-title="Generation">
                       <i class="fas fa-network-wired"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-outline-warning btn-tooltip status-member" data-original-title="Login">
-                      <i class="fas fa-user profile-icon"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-outline-danger btn-tooltip status-member" data-original-title="Remove">
+                    <a href="<?= base_url('Agen/deleteAgen/' . $row['id']); ?>" class="btn btn-sm btn-outline-danger btn-tooltip status-member" data-original-title="Remove" onclick="return confirm('Are you sure?')">
                       <i class="fas fa-trash"></i>
                     </a>
                   </td>
-                </tr>
-                <?php $i++; ?>
-              <?php endforeach; ?>
-              <!-- Data akan ditempatkan di sini -->
-            </tbody>
-          </table>
+              </tr>
+              <?php $i++; ?>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
         </div>
       </div>
     </div>

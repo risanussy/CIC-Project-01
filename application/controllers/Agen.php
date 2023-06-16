@@ -76,6 +76,14 @@ class Agen extends CI_Controller
         $this->load->view('agen/list', $data);
         $this->load->view('templates/footer');
     } 
+
+    public function deleteAgen($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('agen');
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Agen has been deleted!</div>');
+        redirect('agen/list');
+    } 
     
         public function update_last_login($agen_id)
     {
@@ -92,6 +100,11 @@ class Agen extends CI_Controller
     public function jaringan()
     {
         $data['title'] = 'Angga Web';
+        // Memuat model AgenModel
+        $this->load->model('AgenModel');
+
+        // Memanggil metode getAgenList() dari model untuk mendapatkan data agen
+         $data['agen'] = $this->AgenModel->getAgenList();
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -106,7 +119,7 @@ class Agen extends CI_Controller
         
         $data['agen'] = $this->agen_model->get_all_agents();
 
-        $data['title'] = 'Angga Web';
+        $data['title'] = 'B-community';
         
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
