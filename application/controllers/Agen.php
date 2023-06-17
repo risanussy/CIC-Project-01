@@ -87,7 +87,7 @@ class Agen extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Agen has been deleted!</div>');
         redirect('agen/list');
-    } // Tambahkan kurung kurawal penutup di sini
+    }
     
     public function update_last_login($agen_id)
     {

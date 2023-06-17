@@ -60,7 +60,7 @@
                                         <a class="small" href="<?= base_url('auth/registration') ?>">Register Account!</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="" style="font-weight: bold; font-size: 1.1rem; color: green;">
+                                        <a href="<?= base_url('home'); ?>" style="font-weight: bold; font-size: 1.1rem; color: green;">
                                             <i class="fas fa-home"></i> Home
                                         </a>
                                     </div>

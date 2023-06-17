@@ -1,131 +1,107 @@
-     <!-- BEGIN Manage Staff -->
-     <div class="header bg-gradient-underlake pb-6">
+<div class="header bg-gradient-underlake pb-6">
      <div class="container-fluid">
           <div class="header-body">
                <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-5 ">
-                         <a href="" class="btn btn-sm btn-neutral shadow"><i class="fa fa-plus mr-1"></i> Tambah Staff</a>
+                    <div class="col-lg-6 col-5">
+                    <a href="<?= base_url('staff/foam') ?>" class="btn btn-sm btn-neutral mb-4 bg-dark text-success"><i class="fa fa-plus mr-1 mt-3"></i> Tambah Staff</a>
                     </div>
                </div>
           </div>
      </div>
-     </div>
+</div>
 
-     <div class="container-fluid mt--6">
+<div class="container-fluid mt--6">
      <div class="row">
           <div class="col">
                <div class="card">
                     <div class="card-header border-0">
                          <div class="row align-items-center">
-                         <div class="col">
-                              <h3 class="mb-0">Manage Staff </h3>
-                         </div>
+                              <div class="col">
+                                   <h3 class="mb-0">Manage Staff</h3>
+                              </div>
                          </div>
                     </div>
                     <div class="table-container">
-                         <table class="table align-items-center table-flush" id="list_table_staff" >
-                         <thead class="bg-success">
-                              <tr role="row" class="heading" style="color:white !important;">
-                                   <th scope="col" style="width: 10px">#</th>
-                                   <th scope="col" class="text-center">Username</th>
-                                   <th scope="col" class="text-center">Nama</th>
-                                   <th scope="col" class="text-center">Akses</th>
-                                   <th scope="col" class="text-center">Proses</th>
-                              </tr>
-                              <tr role="row" class="filter" style="background-color: #f6f9fc">
-                                   <td></td>
-                                   <td><input type="text" class="form-control form-control-sm form-filter" name="search_username" /></td>
-                                   <td><input type="text" class="form-control form-control-sm form-filter" name="search_name" /></td>
-                                   <td></td>
-                                   <td style="text-align: center;">
-                                        <button class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                        <button class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel" title="Delet"><i class="fa-solid fa-trash-can"></i></button>
-                                   </td>
-                              </tr>
-                         </thead>
-                         <tbody class="list">
-                              <!-- Data Will Be Placed Here -->
-                              <tr>                         
-                                        <td>1.</td>
-                                        <td>Rian123r</td>
-                                        <td>Andrian</td>
-                                        <td>Semua Fitur</td> 
-                                        <td>
-                                             <button class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel" title="Edit"><i class="fa-solid fa-pen"></i>Edit</button>
-                                             <button class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel" title="Reset password"><i class="fa-solid fa-key"></i>Reset Password</button>
-                                             <button class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel" title="Hapus">Hapus</button>
-                                        </td> 
+                         <table class="table align-items-center table-flush cell-border stripe order-column hover" id="list_table">
+                              <thead class="bg-success">
+                                   <tr role="row" class="heading" style="color:white !important;">
+                                        <th scope="col" style="width: 10px">#</th>
+                                        <th scope="col" class="text-center">Username</th>
+                                        <th scope="col" class="text-center">Nama</th>
+                                        <th scope="col" class="text-center">Akses</th>
+                                        <th scope="col" class="text-center" style="width: 200px;">Proses</th>
+                                   </tr>
+                              </thead>
+                              <tbody class="list">
+                                   <?php $i = 1; ?>
+                                   <?php foreach ($staff as $row) : ?>
+                                        <tr>
+                                             <td class="text-center"><?= $i; ?></td>
+                                             <td class="text-center"><?= $row->username; ?></td>
+                                             <td class="text-center"><?= $row->name; ?></td>
+                                             <td class="text-center">Semua Fitur</td>
+                                             <td class="text-center">
+                                                  <button class="btn btn-sm btn-block btn-outline-success btn-tooltip filter-cancel" title="Edit" data-toggle="modal" data-target="#editModal<?= $row->id ?>"><i class="fa-solid fa-pen"></i>Edit</button>
+                                                  <button class="btn btn-sm btn-block btn-outline-warning btn-tooltip filter-cancel" title="Reset password"><i class="fa-solid fa-key"></i>Reset Password</button>
+                                                  <a href="<?= base_url('Staff/deleteStaff/' . $row->id); ?>" class="btn btn-sm btn-block btn-outline-danger btn-tooltip filter-cancel" data-original-title="Remove" onclick="return confirm('Are you sure?')">
+                                                       <i class="fas fa-trash"></i>
+                                                  </a>
+                                             </td>
+                                        </tr>
 
-                              </tr>
-                         </tbody>
+                                        <!-- Edit Modal -->
+                                        <div class="modal fade" id="editModal<?= $row->id ?>" tabindex="-1" aria-labelledby="editModal<?= $row->id ?>Label" aria-hidden="true">
+                                             <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                       <div class="modal-header">
+                                                            <h5 class="modal-title" id="editModal<?= $row->id ?>Label">Edit Data Staff</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                 <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                       </div>
+                                                       <div class="modal-body">
+                                                            <form action="<?= base_url('Staff/editData'); ?>" method="post">
+                                                                 <input type="hidden" name="id" value="<?= $row->id ?>">
+                                                                 <div class="form-group">
+                                                                      <label for="name">Nama</label>
+                                                                      <input type="text" name="name" class="form-control" value="<?= $row->name ?>">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <label for="username">Username</label>
+                                                                      <input type="text" name="username" class="form-control" value="<?= $row->username ?>">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <label for="no_telp">No. Telp</label>
+                                                                      <input type="text" name="no_telp" class="form-control" value="<?= $row->no_telp ?>">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <label for="email">Email</label>
+                                                                      <input type="email" name="email" class="form-control" value="<?= $row->email ?>">
+                                                                 </div>
+                                                                 <div class="form-group row">
+                                                                 <label class="col-sm-2 col-form-label"><i class="fas fa-camera fa-2x mb-5"></i></label>
+                                                                 <div class="col-sm-10">
+                                                                      <div class="row">
+                                                                           <div class="col-sm-9">
+                                                                                <div class="custom-file">
+                                                                                     <input type="file" class="custom-file-input" id="gambar" name="Gambar">
+                                                                                     <label class="custom-file-label" for="gambar">Choose file</label>
+                                                                                </div>
+                                                                           </div>
+                                                                      </div>
+                                                                      </div>
+                                                                 <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </form>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   <?php $i++; ?>
+                                   <?php endforeach; ?>
+                              </tbody>
                          </table>
                     </div>
-
                </div>
           </div>
      </div>
-     </div>
-
-     <div class="modal fade" id="modal_staff_reset_password" tabindex="-1" role="dialog" aria-labelledby="modal_staff_reset_password" aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-               <div class="modal-header">
-                    <h5 class="modal-title"><i class="ni ni-key-25"></i> Reset Password</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-               <form role="form" method="post" action="https://demo4.cic-webpro.com/staff/resetpassword" id="form_staff_reset_password" class="form-horizontal">
-                    <input type="hidden" name="staff_id" id="staff_id">
-                    <div class="modal-body wrapper-form_staff_reset_password py-2">
-                         <div class="form-group row mb-2">
-                         <label class="col-md-3 col-form-label form-control-label">Username <span class="required">*</span></label>
-                         <div class="col-md-9">
-                              <div class="input-group input-group-merge">
-                                   <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-                                   </div>
-                                   <input type="text" name="staff_username" id="staff_username" class="form-control text-lowercase" autocomplete="off" disabled="" />
-                              </div>
-                         </div>
-                         </div>
-
-                         <div class="form-group row mb-2">
-                         <label class="col-md-3 col-form-label form-control-label">Password <span class="required">*</span></label>
-                         <div class="col-md-9">
-                              <div class="input-group input-group-merge">
-                                   <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                   </div>
-                                   <input type="password" name="staff_password" id="staff_password" class="form-control" placeholder="Password harus berisikan minimal 1 huruf dan 1 angka" autocomplete="off" value="" />
-                                   <div class="input-group-append">
-                                        <button class="btn btn-default pass-show-hide" type="button"><i class="fa fa-eye-slash"></i></button>
-                                   </div>
-                              </div>
-                         </div>
-                         </div>
-
-                         <div class="form-group row mb-2">
-                         <label class="col-md-3 col-form-label form-control-label">Confirm password <span class="required">*</span></label>
-                         <div class="col-md-9">
-                              <div class="input-group input-group-merge">
-                                   <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                   </div>
-                                   <input type="password" name="staff_password_confirm" id="staff_password_confirm" class="form-control" placeholder="Konfirmasi Password" autocomplete="off" value="" />
-                                   <div class="input-group-append">
-                                        <button class="btn btn-default pass-show-hide" type="button"><i class="fa fa-eye-slash"></i></button>
-                                   </div>
-                              </div>
-                         </div>
-                         </div>
-                    </div>
-                    <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                         <button type="submit" class="btn btn-primary" id="btn-staff-reset-password">Simpan</button>
-                    </div>
-               </form>
-          </div>
-     </div>
-     </div>    <!-- END CONTENT -->
-
+</div>
